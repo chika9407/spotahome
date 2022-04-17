@@ -1,9 +1,4 @@
-import { NextPage, Link } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import ListingsTable from '../../components/listingsTable'
-import { Listing } from '../../types/listing'
-
 
 const Properties = ({ properties }) => {
   return (
@@ -18,8 +13,8 @@ const Properties = ({ properties }) => {
 }
 
 
-// This gets called on every request
-export async function getServerSideProps() {
+
+export async function getStaticProps() {
   // Fetch data from external API
   const res = await fetch(`http://feeds.spotahome.com/ads-housinganywhere.json`)
   const data = await res.json()

@@ -1,23 +1,17 @@
-// function Listing({ data }) {
-//   // Render data...
-// }
-
-// // This gets called on every request
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`http://feeds.spotahome.com/ads-housinganywhere.json`)
-//   const data = await res.json()
-
-//   // Pass data to the page via props
-//   return { props: { data } }
-// }
-
-// export default Listing
+import { NextApiRequest, NextApiResponse } from 'next';
 
 import nc from 'next-connect'
-// import notes from '../../../src/data/data'
+import http from 'http'
 
-const handler = nc()
+const handler = nc<NextApiRequest, NextApiResponse>({
+    onError: (err, req, res, next) => {
+      console.error(err.stack);
+      res.status(500).end(err.toString());
+    },
+    onNoMatch: (req, res) => {
+      res.status(404).end("Page is not found");
+    },
+  })
   .get((req, res) => {
     res.end(JSON.stringify({data: 'hello'}))
   })
@@ -29,5 +23,13 @@ const handler = nc()
   //   res.json({data: note})
   // })
   
+  http.createServer(handler).listen(process.env.PORT);
+
 
 export default handler
+
+export const config = {
+  api: {
+    responseLimit: false,
+  },
+}
