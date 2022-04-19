@@ -27,6 +27,6 @@ var listing = new Schema({
 
 mongoose.models = {};
 
-var Listing = mongoose.model('Listing', listing);
+const Listing = mongoose.model('Listing', listing);
 
 export default Listing;

@@ -1,12 +1,18 @@
-const mongoose = require("mongoose");
-const Listing = require("../models/listing");
-const fetch = require("node-fetch");
+const dynamic = () => {
+  require ('next/dynamic')
+};
+
+const mongoose = dynamic(import('mongoose'), {ssr: false}) // Async API cannot be server-side rendered
+const Listing = dynamic(import("../../models/listing"))
+const fetch = dynamic(import("node-fetch"));
 
 let resultData;
 let saveCounter = 0;
 let db = process.env.mongourl;
 
-  mongoose.connect(db)
+console.log(mongoose)
+
+mongoose.connect(db)
   .then(() => console.log("mongodb connection success"))
   .catch(error => console.log(error));
 

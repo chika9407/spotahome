@@ -6,9 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@next-tools/dynamic": "0.0.11",
     "@next/swc-darwin-x64": "^11.1.2",
+    "dynamic": "^4.2.2",
     "mongoose": "^6.3.0",
     "next": "latest",
+    "next-compose-plugins": "^2.2.1",
     "next-connect": "^0.12.2",
     "next-transpile-modules": "^9.0.0",
     "node-fetch": "^3.2.3",

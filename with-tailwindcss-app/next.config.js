@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const withPlugins = require('next-compose-plugins');
+const withTM = require("next-transpile-modules")(["mongoose", "node-fetch"]);
+
+module.exports = withPlugins([withTM], {
   reactStrictMode: true,
   env: {
     mongodburl: "mongodburl",
   }, 
-}
-
-// const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
-// module.exports = withTM({});
-
+})
