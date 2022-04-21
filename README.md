@@ -1,4 +1,4 @@
 # spotahome-test
 
 Using NextJS as a full-stack platform here, because it is kind of like a boilerplate for both React and Node with CSS and TS configs.
-Plus, I wanted to learn something while doing this task, and learning NextJS seemed like a perfect opportunity. Alas, I couldn't complete the task because I wasn't able to seed my DB due to some compiler error (my seed file loading like a server-side rendering file, etc., and webpack is not something I am good at). However, if I had more time perhaps I would redo this exercise in a standard Node and React scafollded project. Workin full-time and doing test assignments with a new framework to learn turned out to be a overestimation of my current abilities. Anyway, have a look and let me know what you think. 
+Plus, I wanted to learn something while doing this task, and learning NextJS seemed like a perfect opportunity. Alas, I couldn't complete the task because I wasn't able to seed my DB due to some compiler error (my seed file loading like a server-side rendering file, etc., and webpack is not something I am good at). 
